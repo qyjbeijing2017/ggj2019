@@ -1,0 +1,3 @@
+id,text,symbol,value
+int,string,enum[],int[]
+1,test1,Greater#Equal#Less,80#80#100
