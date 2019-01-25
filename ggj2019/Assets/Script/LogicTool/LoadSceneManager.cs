@@ -27,6 +27,7 @@ namespace DaemonTools
         /// <param name="loadSceneMode">加载模式</param>
         public void LoadScene(string sceneName,LoadSceneMode loadSceneMode = LoadSceneMode.Single)
         {
+            UIManager.Instance.clear();
             SceneManager.LoadScene(sceneName,loadSceneMode);
         }
 
@@ -37,6 +38,7 @@ namespace DaemonTools
         /// <param name="loadSceneMode">加载模式</param>
         public void LoadScene(int sceneId, LoadSceneMode loadSceneMode = LoadSceneMode.Single)
         {
+            UIManager.Instance.clear();
             SceneManager.LoadScene(sceneId, loadSceneMode);
         }
 
@@ -49,7 +51,9 @@ namespace DaemonTools
         /// <param name="loadSceneMode">加载模式</param>
         public void LoadSceneAsync(string sceneName, UnityAction callBack = null, UnityAction loadBefore = null, LoadSceneMode loadSceneMode = LoadSceneMode.Single)
         {
+            UIManager.Instance.clear();
             SceneManager.LoadScene("LoadingScene");
+            UIManager.Instance.Open("Loading");
             Daemon.Instance.StartCoroutine(LoadScene(sceneName, callBack, loadBefore, loadSceneMode));
         }
 
@@ -62,7 +66,9 @@ namespace DaemonTools
         /// <param name="loadSceneMode">加载模式</param>
         public void LoadSceneAsync(int sceneId, UnityAction callBack = null, UnityAction loadBefore = null, LoadSceneMode loadSceneMode = LoadSceneMode.Single)
         {
+            UIManager.Instance.clear();
             SceneManager.LoadScene("LoadingScene");
+            UIManager.Instance.Open("Loading");
             Daemon.Instance.StartCoroutine(LoadScene(sceneId, callBack, loadBefore, loadSceneMode));
         }
 
@@ -79,6 +85,7 @@ namespace DaemonTools
                     {
                         callBack.Invoke();
                     }
+                    UIManager.Instance.clear();
                     asyncOperationScene.allowSceneActivation = true;
                     m_loadProgress = 0;
                 }
@@ -100,6 +107,7 @@ namespace DaemonTools
                     {
                         callBack.Invoke();
                     }
+                    UIManager.Instance.clear();
                     asyncOperationScene.allowSceneActivation = true;
                     m_loadProgress = 0;
                 }

@@ -1,3 +1,4 @@
 id,path
 string,string
 StartPanel,UI/StartPanel/StartPanel
+Loading,UI/Loading/Loading

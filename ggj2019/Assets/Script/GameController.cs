@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DaemonTools;
 
-public class GameController : MonoBehaviour
+public class GameController : MonoSingleton<GameController>
 {
+
     // Start is called before the first frame update
     void Start()
     {

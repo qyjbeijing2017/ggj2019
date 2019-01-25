@@ -9,11 +9,11 @@ public class Attribute
     public float Responsibility { get { return m_arrtibute.y; } set { m_arrtibute.y = value; } }
     public float Stress { get { return m_arrtibute.z; } set { m_arrtibute.z = value; } }
 
-    Attribute(float love, float responsibility, float stress)
+    public Attribute(float love, float responsibility, float stress)
     {
         m_arrtibute = new Vector3(love, responsibility, stress);
     }
-    Attribute()
+    public Attribute()
     {
         m_arrtibute = Vector3.zero;
     }

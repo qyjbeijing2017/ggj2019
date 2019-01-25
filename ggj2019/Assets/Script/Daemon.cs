@@ -17,10 +17,12 @@ public class Daemon : MonoSingleton<Daemon>
         DontDestroyOnLoad(gameObject);
         ConfigManager.Instance.InitUIConfig();
         UIManager.Instance.Init();
+        ConfigManager.Instance.InitConfigManager();
     }
 
     private void Start() {
-        UIManager.Instance.Open("StartPanel");       
+        UIManager.Instance.Open("StartPanel"); 
+              
     }
 
 
