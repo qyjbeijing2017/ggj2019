@@ -55,6 +55,10 @@ public class Attribute
 
     static bool LikeHelp(int a, EndConfig.SymbolType type, int value)
     {
+        if (a<0)
+        {
+            a = 0;
+        }
         switch (type)
         {
             case EndConfig.SymbolType.Equal:

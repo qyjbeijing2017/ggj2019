@@ -29,7 +29,6 @@ public class GameOver : UIBase
 
     public void OnRestart()
     {
-        Destroy(Daemon.Instance.gameObject);
         LoadSceneManager.Instance.LoadSceneAsync("GameStage");
         Time.timeScale = 1;
 

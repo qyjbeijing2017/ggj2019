@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_start: {fileID: 9144373205888615227}
+  m_quite: {fileID: 8363867118376248961}
 --- !u!1 &8047566028766295117
 GameObject:
   m_ObjectHideFlags: 0

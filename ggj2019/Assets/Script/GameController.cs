@@ -106,6 +106,7 @@ public class GameController : MonoSingleton<GameController>
             }
         }
         Debug.Log(end.Id);
+        Debug.Log(LevelAttribute.Love +"," +LevelAttribute.Responsibility+"," +LevelAttribute.Stress);
         UIManager.Instance.Open("GameOver", true,end.Text);
     }
 
