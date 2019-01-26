@@ -2,3 +2,6 @@ id,path
 string,string
 StartPanel,UI/StartPanel/StartPanel
 Loading,UI/Loading/Loading
+PlayerGUI,UI/PlayerGUI/PlayerGUI
+GameOver,UI/GameOver/GameOver
+Pause,UI/Pause/Pause

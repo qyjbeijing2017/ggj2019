@@ -14,7 +14,7 @@ public class WordsConfig :BaseConfig
     }
     public int ID;
     public string text;
-    public List<KeyCodeType> Keys = new List<KeyCodeType>();
+
     public Attribute attribute = new Attribute();
     public int group = 0;
     
@@ -35,7 +35,7 @@ public class WordsConfig :BaseConfig
             attribute = new Attribute(love, responsibility, stress);
         }
 
-        int.TryParse(m_data[4], out group);
+        int.TryParse(m_data[3], out group);
 
     }
 

@@ -51,8 +51,10 @@ namespace DaemonTools
         /// <param name="loadSceneMode">加载模式</param>
         public void LoadSceneAsync(string sceneName, UnityAction callBack = null, UnityAction loadBefore = null, LoadSceneMode loadSceneMode = LoadSceneMode.Single)
         {
+
             UIManager.Instance.clear();
             SceneManager.LoadScene("LoadingScene");
+            Time.timeScale = 1;
             UIManager.Instance.Open("Loading");
             Daemon.Instance.StartCoroutine(LoadScene(sceneName, callBack, loadBefore, loadSceneMode));
         }
@@ -68,7 +70,9 @@ namespace DaemonTools
         {
             UIManager.Instance.clear();
             SceneManager.LoadScene("LoadingScene");
+            
             UIManager.Instance.Open("Loading");
+            Debug.Break();
             Daemon.Instance.StartCoroutine(LoadScene(sceneId, callBack, loadBefore, loadSceneMode));
         }
 

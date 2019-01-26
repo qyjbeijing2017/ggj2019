@@ -17,6 +17,10 @@ public class Attribute
     {
         m_arrtibute = Vector3.zero;
     }
+    public Attribute(Vector3 vec3)
+    {
+        m_arrtibute = vec3;
+    }
 
     public static Attribute operator +(Attribute a, Attribute b)
     {
@@ -42,7 +46,7 @@ public class Attribute
             return false;
         if (!LikeHelp((int)attribute.Responsibility, end.Symbol[1], (int)end.Value.y))
             return false;
-        if (!LikeHelp((int)attribute.Stress, end.Symbol[3], (int)end.Value.z))
+        if (!LikeHelp((int)attribute.Stress, end.Symbol[2], (int)end.Value.z))
             return false;
 
         return true;
@@ -63,7 +67,7 @@ public class Attribute
                     return false;
                 }
             case EndConfig.SymbolType.Greater:
-                if (value >= a)
+                if (a >= value)
                 {
                     return true;
                 }
@@ -72,7 +76,7 @@ public class Attribute
                     return false;
                 }
             case EndConfig.SymbolType.Less:
-                if (value < a)
+                if (a < value)
                 {
                     return true;
                 }
