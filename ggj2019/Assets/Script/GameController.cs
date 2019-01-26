@@ -170,8 +170,8 @@ public class GameController : MonoSingleton<GameController>
         float group = Random.Range(0.0f, 1.0f);
         if (group>0.9f)
         {
-            int group1 = Random.Range(0, Words[0].Count);
-            return Words[0][group1];
+            int group1 = Random.Range(0, Words[2].Count);
+            return Words[2][group1];
         }
         if (group>0.6f)
         {
@@ -179,8 +179,8 @@ public class GameController : MonoSingleton<GameController>
             return Words[1][group2];
         }
 
-        int group3 = Random.Range(0, Words[2].Count);
-        return Words[2][group3];
+        int group3 = Random.Range(0, Words[0].Count);
+        return Words[0][group3];
     }
 
 
