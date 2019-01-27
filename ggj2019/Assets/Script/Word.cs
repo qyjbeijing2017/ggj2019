@@ -9,7 +9,7 @@ public class Word : MonoBehaviour
     [SerializeField] Text m_text;
     [SerializeField] List<Image> m_keyImages;
     [SerializeField] List<Animator> m_animator;
-    [SerializeField] List<Text> m_keyText;
+    //[SerializeField] List<Text> m_keyText;
     [SerializeField] public List<WordsConfig.KeyCodeType> Keys;
     [Space(20)]
     [SerializeField] Sprite m_Left;
@@ -34,15 +34,15 @@ public class Word : MonoBehaviour
             {
                 case WordsConfig.KeyCodeType.Left:
                     m_keyImages[i].sprite = m_Left;
-                    m_keyText[i].text = "F";
+                    //m_keyText[i].text = "F";
                     break;
                 case WordsConfig.KeyCodeType.Right:
                     m_keyImages[i].sprite = m_Right;
-                    m_keyText[i].text = "J";
+                    //m_keyText[i].text = "J";
                     break;
                 case WordsConfig.KeyCodeType.Middle:
                     m_keyImages[i].sprite = m_Middle;
-                    m_keyText[i].text = "SPACE";
+                    //m_keyText[i].text = "SPACE";
                     break;
                 default:
                     break;
@@ -187,7 +187,7 @@ public class Word : MonoBehaviour
 
     IEnumerator SuccessfulTimer()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.13f);
         GameController.Instance.LevelAttribute += m_word.attribute;
         Destroy(gameObject);
     }

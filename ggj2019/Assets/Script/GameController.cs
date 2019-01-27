@@ -30,7 +30,10 @@ public class GameController : MonoSingleton<GameController>
     [SerializeField, Range(0, 100), Header("初始爱情值")] int m_love;
     [SerializeField, Range(0, 100), Header("初始责任值")] int m_responsibility;
     [SerializeField, Range(0, 100), Header("初始压力值")] int m_stress;
-    [SerializeField, Header("属性每秒减少值")] float m_attributeDecrease = 1.0f;
+    [SerializeField, Header("L属性每秒减少值")] float m_attributeDecreaseLove = 1.0f;
+	[SerializeField, Header("R属性每秒减少值")] float m_attributeDecreaseResponsibility = 1.0f;
+	[SerializeField, Header("S属性每秒减少值")] float m_attributeDecreaseStress = 1.0f;
+
 
 
     public Attribute LevelAttribute = new Attribute();
@@ -147,7 +150,7 @@ public class GameController : MonoSingleton<GameController>
         }
 
 
-        LevelAttribute -= new Attribute(m_attributeDecrease * Time.deltaTime, m_attributeDecrease * Time.deltaTime, m_attributeDecrease * Time.deltaTime);
+        LevelAttribute -= new Attribute(m_attributeDecreaseLove * Time.deltaTime, m_attributeDecreaseResponsibility * Time.deltaTime, m_attributeDecreaseStress * Time.deltaTime);
 
         m_love = (int)LevelAttribute.Love;
         m_stress = (int)LevelAttribute.Stress;
