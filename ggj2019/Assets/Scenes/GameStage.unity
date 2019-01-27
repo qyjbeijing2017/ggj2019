@@ -162,12 +162,12 @@ MonoBehaviour:
   m_rightEdge: 5.6
   m_Top: 6.34
   m_Button: -1.7
-  m_minRefresh: 2.8
-  m_maxRefresh: 3.5
+  m_minRefresh: 3.2
+  m_maxRefresh: 3.7
   m_decreaseRefresh: 0.05
   m_decreaseRefreshMin: 2
   m_xChange: 1.5
-  m_fallSpeed: 0.8
+  m_fallSpeed: 0.4
   m_fallSpeedCrease: 0.03
   m_fallSpeedMax: 1.5
   m_love: 40
