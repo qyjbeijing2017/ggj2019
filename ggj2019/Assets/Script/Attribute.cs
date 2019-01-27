@@ -59,6 +59,10 @@ public class Attribute
         {
             a = 0;
         }
+		if (a > 100)
+        {
+            a = 100;
+        }
         switch (type)
         {
             case EndConfig.SymbolType.Equal:
