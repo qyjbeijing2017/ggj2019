@@ -222,6 +222,7 @@ public class Word : MonoBehaviour
             {
                 GameController.Instance.OnWordsSuccessful.Invoke();
             }
+			m_lateSuccessful = false;
         }
         else
             m_lateSuccessful = false;

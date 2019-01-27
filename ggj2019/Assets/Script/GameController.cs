@@ -11,6 +11,7 @@ public class GameController : MonoSingleton<GameController>
     [SerializeField] List<WordsConfig> m_words;
     [SerializeField] float m_lastXPosition = 0.0f;
     [SerializeField] Word m_word;
+	[SerializeField] Animator m_animator;
 
     [SerializeField, Range(-10, 0), Header("随机words刷新左边缘")] public float m_leftEdge = -3;
     [SerializeField, Range(0, 10), Header("随机words刷新右边缘")] public float m_rightEdge = 3;
@@ -45,8 +46,20 @@ public class GameController : MonoSingleton<GameController>
     private List<List<WordsConfig>> Words = new List<List<WordsConfig>>();
 
     public UnityAction OnWordsSuccessful;
+    
+	void OnSuccessful(){
+		m_animator.speed = 1;
+		m_animator.Play("Walk",0,0.0f);
+		print("1");
+	}
 
-    void Start()
+	public void OnWalkEnd()
+	{
+		print("end");
+		m_animator.speed = 0;
+	}
+
+	void Start()
     {
         LevelAttribute = new Attribute(m_love, m_responsibility, m_stress);
 
@@ -77,9 +90,19 @@ public class GameController : MonoSingleton<GameController>
 
         StartCoroutine("CreatWordsLoop");
 
+		m_animator.speed = 0;
+		OnWordsSuccessful += OnSuccessful;
+
         UIManager.Instance.Open("PlayerGUI");
         OnWin += Win;
+		OnWin += DestoryMain;
+
     }
+
+	void DestoryMain(){
+		
+		Destroy(m_animator.gameObject);
+	}
 
     private void FixedUpdate()
     {
